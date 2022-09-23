@@ -6,7 +6,7 @@ export default function Home({ catList }) {
   const [data, setData] = useState(catList);
 
 
-  // console.log(data);
+// use this block for regular database fetching 
 
   // initial data fetch
   // useEffect(() => {
@@ -104,7 +104,7 @@ export default function Home({ catList }) {
   );
 }
 
-
+// will only fetch data at runtime, use useEffect for regular data fetching i.e non static
 Home.getInitialProps = async () => {
   const res = await fetch("http://localhost:8080/catdata.json");
   const data = await res.json();
