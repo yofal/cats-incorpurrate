@@ -104,10 +104,14 @@ export default function Home({ catList }) {
   );
 }
 
-// will only fetch data at runtime, use useEffect for regular data fetching i.e non static
-Home.getInitialProps = async () => {
+
+export async function getStaticProps() {
   const res = await fetch("http://localhost:8080/catdata.json");
   const data = await res.json();
   const catList = data.cats
-  return { catList: catList };
-};
+  return {
+    props: {
+      catList,
+    }, 
+  }
+}
