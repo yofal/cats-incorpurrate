@@ -6,7 +6,7 @@ export default function Home({ catList }) {
   const [data, setData] = useState(catList);
 
 
-// use this block for regular database fetching 
+// use this block for regular clientside database fetching 
 
   // initial data fetch
   // useEffect(() => {
